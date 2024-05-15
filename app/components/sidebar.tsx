@@ -157,7 +157,7 @@ export function SideBar(props: { className?: string }) {
           FMC-NextChat
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          非保密系统，注意不要泄露敏感信息。
+          ⚠️ 非保密系统，注意不要泄露敏感信息。
         </div>
         <div className={styles["sidebar-sub-title"]}>
           Please refrain from disclosing sensitive information on this non-classified system.
