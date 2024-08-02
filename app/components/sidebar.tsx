@@ -142,9 +142,8 @@ export function SideBarContainer(props: {
   const { children, className, onDragStart, shouldNarrow } = props;
   return (
     <div
-      className={`${styles.sidebar} ${className} ${
-        shouldNarrow && styles["narrow-sidebar"]
-      }`}
+      className={`${styles.sidebar} ${className} ${shouldNarrow && styles["narrow-sidebar"]
+        }`}
       style={{
         // #3016 disable transition on ios mobile screen
         transition: isMobileScreen && isIOSMobile ? "none" : undefined,
@@ -223,8 +222,8 @@ export function SideBar(props: { className?: string }) {
       {...props}
     >
       <SideBarHeader
-        title="NextChat"
-        subTitle="Build your own AI assistant."
+        title="FMC-AI"
+        subTitle="⚠️ 非保密系统，注意不要泄露敏感信息。\nPlease refrain from disclosing sensitive information on this non-classified system."
         logo={<ChatGptIcon />}
       >
         <div className={styles["sidebar-header-bar"]}>
@@ -249,28 +248,30 @@ export function SideBar(props: { className?: string }) {
             shadow
           />
         </div>
-        {showPluginSelector && (
-          <Selector
-            items={[
-              {
-                title: "👇 Please select the plugin you need to use",
-                value: "-",
-                disable: true,
-              },
-              ...PLUGINS.map((item) => {
-                return {
-                  title: item.name,
-                  value: item.path,
-                };
-              }),
-            ]}
-            onClose={() => setShowPluginSelector(false)}
-            onSelection={(s) => {
-              navigate(s[0], { state: { fromHome: true } });
-            }}
-          />
-        )}
-      </SideBarHeader>
+        {
+          showPluginSelector && (
+            <Selector
+              items={[
+                {
+                  title: "👇 Please select the plugin you need to use",
+                  value: "-",
+                  disable: true,
+                },
+                ...PLUGINS.map((item) => {
+                  return {
+                    title: item.name,
+                    value: item.path,
+                  };
+                }),
+              ]}
+              onClose={() => setShowPluginSelector(false)}
+              onSelection={(s) => {
+                navigate(s[0], { state: { fromHome: true } });
+              }}
+            />
+          )
+        }
+      </SideBarHeader >
       <SideBarBody
         onClick={(e) => {
           if (e.target === e.currentTarget) {
@@ -321,6 +322,6 @@ export function SideBar(props: { className?: string }) {
           />
         }
       />
-    </SideBarContainer>
+    </SideBarContainer >
   );
 }
