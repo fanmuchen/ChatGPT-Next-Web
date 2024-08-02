@@ -171,9 +171,14 @@ export function SideBarHeader(props: {
     <Fragment>
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          {title}
+          FMC-AI
         </div>
-        <div className={styles["sidebar-sub-title"]}>{subTitle}</div>
+        <div className={styles["sidebar-sub-title"]}>
+          ⚠️ 非保密系统，注意不要泄露敏感信息。
+        </div>
+        <div className={styles["sidebar-sub-title"]}>
+          Please refrain from disclosing sensitive information on this non-classified system.
+        </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>{logo}</div>
       </div>
       {children}
@@ -222,8 +227,8 @@ export function SideBar(props: { className?: string }) {
       {...props}
     >
       <SideBarHeader
-        title="FMC-AI"
-        subTitle="⚠️ 非保密系统，注意不要泄露敏感信息。\nPlease refrain from disclosing sensitive information on this non-classified system."
+        title="hardcoded"
+        subTitle="hardcoded"
         logo={<ChatGptIcon />}
       >
         <div className={styles["sidebar-header-bar"]}>
@@ -253,7 +258,7 @@ export function SideBar(props: { className?: string }) {
             <Selector
               items={[
                 {
-                  title: "👇 Please select the plugin you need to use",
+                  title: "👇 请选择插件",
                   value: "-",
                   disable: true,
                 },
